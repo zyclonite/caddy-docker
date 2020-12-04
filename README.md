@@ -4,7 +4,7 @@
 
 Custom Caddyserver as Docker Image.
 
-Added modules: forwardproxy
+Added modules: forwardproxy, route53
 
 #### Run
 
