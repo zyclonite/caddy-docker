@@ -1,12 +1,12 @@
 FROM caddy:2.2.1-builder AS builder
 
 RUN xcaddy build \
-    --with github.com/caddyserver/forwardproxy
+    --with github.com/caddyserver/forwardproxy@caddy2
 
 FROM alpine:3.12
 
 LABEL version "2.2.1"
-LABEL description "Caddyserver as Docker Image"
+LABEL description "Custom Caddyserver as Docker Image"
 
 ENV XDG_CONFIG_HOME /config
 ENV XDG_DATA_HOME /data

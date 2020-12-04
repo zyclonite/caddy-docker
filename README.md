@@ -2,7 +2,7 @@
 
 #### Description
 
-Caddyserver as Docker Image.
+Custom Caddyserver as Docker Image.
 
 Added modules: forwardproxy
 
