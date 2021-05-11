@@ -1,12 +1,12 @@
-FROM caddy:2.3.0-builder AS builder
+FROM caddy:2.4.0-builder AS builder
 
 RUN xcaddy build \
     --with github.com/caddy-dns/route53 \
     --with github.com/caddyserver/forwardproxy@caddy2
 
-FROM alpine:3.12
+FROM alpine:3.13
 
-LABEL version "2.3.0"
+LABEL version "2.4.0"
 LABEL description "Custom Caddyserver as Docker Image"
 
 ENV XDG_CONFIG_HOME /config
