@@ -4,10 +4,13 @@ RUN xcaddy build \
     --with github.com/caddy-dns/route53 \
     --with github.com/caddyserver/forwardproxy@caddy2
 
-FROM alpine:3.13
+FROM alpine:3.14
 
-LABEL version "2.4.3"
-LABEL description "Custom Caddyserver as Docker Image"
+LABEL org.opencontainers.image.title="caddy" \
+      org.opencontainers.image.version="2.4.3" \
+      org.opencontainers.image.description="Custom Caddyserver as Docker Image" \
+      org.opencontainers.image.licenses="Apache-2.0" \
+      org.opencontainers.image.source="https://github.com/zyclonite/caddy-docker"
 
 ENV XDG_CONFIG_HOME /config
 ENV XDG_DATA_HOME /data
@@ -18,9 +21,7 @@ RUN apk add --no-cache --purge --clean-protected -u ca-certificates mailcap \
 
 COPY --from=builder /usr/bin/caddy /usr/bin/caddy
 
-EXPOSE 80
-EXPOSE 443
-EXPOSE 2019
+EXPOSE 80 443 2019
 
 WORKDIR /srv
 
