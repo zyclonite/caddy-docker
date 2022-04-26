@@ -1,13 +1,13 @@
-FROM caddy:2.4.6-builder AS builder
+FROM caddy:2.5.0-builder AS builder
 
 RUN xcaddy build \
     --with github.com/caddy-dns/route53 \
     --with github.com/caddyserver/forwardproxy@caddy2
 
-FROM alpine:3.14
+FROM alpine:3.15
 
 LABEL org.opencontainers.image.title="caddy" \
-      org.opencontainers.image.version="2.4.6" \
+      org.opencontainers.image.version="2.5.0" \
       org.opencontainers.image.description="Custom Caddyserver as Docker Image" \
       org.opencontainers.image.licenses="Apache-2.0" \
       org.opencontainers.image.source="https://github.com/zyclonite/caddy-docker"
