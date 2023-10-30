@@ -2,7 +2,7 @@ FROM caddy:2.7.5-builder AS builder
 
 RUN xcaddy build \
     --with github.com/caddy-dns/route53 \
-    --with github.com/caddyserver/forwardproxy@caddy2
+    --with github.com/zyclonite/forwardproxy
 
 FROM alpine:3.18
 
