@@ -4,7 +4,7 @@ RUN xcaddy build \
     --with github.com/caddy-dns/route53 \
     --with github.com/zyclonite/forwardproxy@1.0.0
 
-FROM alpine:3.18
+FROM alpine:3.20
 
 LABEL org.opencontainers.image.title="caddy" \
       org.opencontainers.image.version="2.7.5" \
