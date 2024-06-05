@@ -1,8 +1,11 @@
 FROM caddy:2.8.4-builder AS builder
 
+RUN git clone https://github.com/zyclonite/caddy-route53 /src/route53 && \
+    git clone https://github.com/zyclonite/caddy-forwardproxy /src/forwardproxy
+
 RUN xcaddy build \
-    --with github.com/caddy-dns/route53 \
-    --with github.com/caddyserver/forwardproxy
+    --with github.com/caddy-dns/route53=/src/route53 \
+    --with github.com/caddyserver/forwardproxy=/src/forwardproxy
 
 FROM alpine:3.20
 
