@@ -4,7 +4,7 @@ RUN git clone https://github.com/zyclonite/caddy-route53 /src/route53 && \
     git clone https://github.com/zyclonite/caddy-forwardproxy /src/forwardproxy
 
 RUN xcaddy build \
-    --replace github.com/libdns/route53=github.com/zyclonite/route53@v1.5.3 \
+    --replace github.com/libdns/route53=github.com/zyclonite/route53@v1.5.4 \
     --with github.com/caddy-dns/route53=/src/route53 \
     --with github.com/caddyserver/forwardproxy=/src/forwardproxy
 
