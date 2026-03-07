@@ -1,4 +1,4 @@
-FROM caddy:2.11.1-builder AS builder
+FROM caddy:2.11.2-builder AS builder
 
 RUN git clone https://github.com/zyclonite/caddy-forwardproxy /src/forwardproxy
 
@@ -9,7 +9,7 @@ RUN xcaddy build \
 FROM alpine:3.23
 
 LABEL org.opencontainers.image.title="caddy" \
-      org.opencontainers.image.version="2.11.1" \
+      org.opencontainers.image.version="2.11.2" \
       org.opencontainers.image.description="Custom Caddyserver as Docker Image" \
       org.opencontainers.image.licenses="Apache-2.0" \
       org.opencontainers.image.source="https://github.com/zyclonite/caddy-docker"
